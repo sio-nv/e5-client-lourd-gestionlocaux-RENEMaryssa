@@ -18,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import m2l.desktop.gestion.model.AffichageIntervention;
+import m2l.desktop.gestion.model.Intervention;
 
 /**
  *
@@ -98,6 +99,11 @@ public class InterventionsJourTableviewController implements Initializable{
          dateJour.setText(sd);
         configureOngletInterventionsJour();
 
+        // Charger les données des interventions du jour
+        //List<Intervention> interventions = InterventionsDuJour();
+        // Afficher les données dans la TableView
+        //afficherInterventions(interventions);
+
 
     }
 
@@ -161,6 +167,8 @@ public class InterventionsJourTableviewController implements Initializable{
             ex.printStackTrace();
 
         }
+        
+
 
     }
 

@@ -6,6 +6,8 @@
 package m2l.desktop.gestion.model;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 import javafx.beans.property.SimpleStringProperty;
 
 /**
@@ -53,4 +55,15 @@ public class Intervention
         this.motif=motif;
     }
 
+    public String getDate() {
+        if (date == null) {
+            return "Date non définie";
+        }
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        return formatter.format(date);
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

@@ -18,6 +18,7 @@ public class AffichageIntervention {
     private final Intervenant intervenant;
     private final Salle salle;
 
+
     public AffichageIntervention(Salle s, Intervenant p, Intervention i )
     {
         this.salle=s;
@@ -37,4 +38,13 @@ public class AffichageIntervention {
     public SimpleIntegerProperty getContactProperty() {
         return new SimpleIntegerProperty(intervenant.getTelephone());
     }
+
+    public SimpleStringProperty getMotifProperty() {
+        return new SimpleStringProperty(intervention.getMotif());
+    }
+
+    public SimpleStringProperty getDateProperty() {
+        return new SimpleStringProperty(intervention.getDate());
+    }
+
 }
