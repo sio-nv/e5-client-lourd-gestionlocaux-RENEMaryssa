@@ -66,4 +66,13 @@ public class Intervention
     public void setDate(Date date) {
         this.date = date;
     }
+
+    //Ajout du getter heure
+    public String getHeure() {
+        return heure;
+    }
+
+    public void setHeure(String heure) {
+        this.heure = heure;
+    }
 }

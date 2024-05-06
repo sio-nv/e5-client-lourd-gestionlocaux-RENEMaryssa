@@ -12,10 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import m2l.desktop.gestion.AjoutIntervention;
-import m2l.desktop.gestion.model.AffichageIntervention;
-import m2l.desktop.gestion.model.Intervenant;
-import m2l.desktop.gestion.model.Intervention;
-import m2l.desktop.gestion.model.Salle;
+import m2l.desktop.gestion.model.*;
 
 import java.net.URL;
 import java.sql.*;
@@ -78,6 +75,9 @@ public class InterventionsTableviewController implements Initializable {
     public TableColumn <AffichageIntervention,String>motifCol_all;
     @FXML
     public TableColumn <AffichageIntervention,String>dateCol_all;
+
+    @FXML
+    public TableColumn <AffichageIntervention,String>heureCol_all;
     @FXML
     public Label dateJour;
 
@@ -167,6 +167,10 @@ public class InterventionsTableviewController implements Initializable {
                     //avec la propriété "date" de l'intervention de la classe AffichageIntervention
                     dateCol_all.setCellValueFactory(cell->cell.getValue().getDateProperty());
 
+                    //mise en correspondance de la colonne "heurecol" du tableview
+                    //avec la propriété "heure" de l'intervention de la classe AffichageIntervention
+                    heureCol_all.setCellValueFactory(cell->cell.getValue().getHeureProperty());
+
                     //création de la liste qui correspondra au contenu
                     //du tableview
                     donnees_interventions_all=FXCollections.observableList(liste_des_interventions);
@@ -213,5 +217,19 @@ public class InterventionsTableviewController implements Initializable {
         Stage stage = (Stage) scene.getWindow();
         new AjoutIntervention(stage);
     }
+
+    public void supprimerIntervention(MouseEvent mouseEvent) {
+        //récupération du climatiseur sélectionné
+        Climatiseur selectedItem = (Climatiseur) toutesInterventions.getSelectionModel().getSelectedItem();
+
+        Model_Clim.deleteClimatiseur(selectedItem.getId());
+
+        System.out.println("Suppression de l'item double-cliqué : " + selectedItem.getMarque());
+
+        //mise à jour du modèle
+        Model_Clim.getClimatiseurs().remove(selectedItem);
+    }
+
+
 
 }

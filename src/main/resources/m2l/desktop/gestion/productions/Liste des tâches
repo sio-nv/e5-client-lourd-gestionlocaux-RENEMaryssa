@@ -1,0 +1,6 @@
+1.	Créer une méthode permettant la suppression d’une intervention
+2.	Ajout d’une icone corbeille (mettre une action sur le bouton)
+3.	Créer une requête pour la suppression de l’intervention sélectionnée (faire en sorte que l’intervention se supprime dans la vue mais dans la base de donnée)
+4.	Ajouter un nouveau champ dans la vue se nommant « Heure intervention »
+5.	Créer une requête sql permettant de récupérer toutes les heures afin qu’elle s’affiche dans l’onglet
+6.	Ajout d’un getter pour l’attribut intervention de la classe AffichageIntervention

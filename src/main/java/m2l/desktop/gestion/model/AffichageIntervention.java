@@ -7,6 +7,7 @@ package m2l.desktop.gestion.model;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.input.MouseEvent;
 
 /**
  *
@@ -45,6 +46,15 @@ public class AffichageIntervention {
 
     public SimpleStringProperty getDateProperty() {
         return new SimpleStringProperty(intervention.getDate());
+    }
+
+    //Ajout d'un simpleStringProperty
+    public SimpleStringProperty getHeureProperty() {
+        return new SimpleStringProperty(intervention.getHeure());
+    }
+
+    public MouseEvent getIntervention() {
+        return null;
     }
 
 }

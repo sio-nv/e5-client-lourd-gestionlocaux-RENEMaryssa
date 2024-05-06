@@ -132,6 +132,12 @@ public class InterventionsJourTableviewController implements Initializable{
                     //création d'un "Statement" pour exécuter la requête
                     stmt = connexion.createStatement();
 
+                    String sql = "SELECT I.statut, motif, S.nom as nomSalle, P.nom " +
+                            "AS nomIntervenant, prenom, telephone FROM interventions I " +
+                            "join salles S on S.numeroSalle=numSalle " +
+                            "join intervenants P on P.numeroInter = numIntervenant";
+
+
                
 
 

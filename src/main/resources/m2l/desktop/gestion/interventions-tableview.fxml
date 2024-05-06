@@ -19,6 +19,8 @@
                 <TableColumn fx:id="contactCol_all" prefWidth="150" text="Contact intervenant"/>
                 <TableColumn fx:id="motifCol_all" prefWidth="150" text="Motif intervention"/>
                 <TableColumn fx:id="dateCol_all" prefWidth="150" text="Date intervention"/>
+                <!--Ajout d'un nouveau champ heure intervention-->
+                <TableColumn fx:id="heureCol_all" prefWidth="150" text="Heure intervention"/>
             </columns>
         </TableView>
 
@@ -30,6 +32,12 @@
                 <Image url="@images/add.png" />
             </image>
         </ImageView>
+
+            <ImageView onMouseClicked="#supprimerIntervention" accessibleText="Supprimer une intervention" fitWidth="50" preserveRatio="true">
+                <image>
+                    <Image url="@images/remove.png" />
+                </image>
+            </ImageView>
 
         </HBox>
 
